@@ -1,0 +1,48 @@
+.et_pb_button {
+    display: inline-block;
+    margin: 5px;
+}
+
+.button {
+    background-color: white;
+    border: 0.5px solid #808080;
+    color: black;
+    height: 75px;
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 8px; 
+    cursor: pointer;
+    
+}
+
+.dog {
+    height: 75px;
+    width: 75px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+  }
+  .grid-container > div {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  /* .cell {
+    border: 0.5px solid #808080;
+  } */
+
+  .pic {
+      box-shadow: 5px 5px 2px grey;
+  }
+
+  .name {
+    margin-top: 10px;
+  }
+

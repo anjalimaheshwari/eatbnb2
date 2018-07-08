@@ -7,17 +7,20 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { EatbnbComponent } from './eatbnb/eatbnb.component';
 import { ProductModule } from './products/product.module';
+import { BasicComponent } from './basic/basic.component';
+import { EatbnbService } from './eatbnb/eatbnb.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent, 
-    EatbnbComponent
+    EatbnbComponent, BasicComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
+      { path: 'basic', component: BasicComponent},
       { path: 'eatbnb', component: EatbnbComponent },
         { path: 'welcome', component: WelcomeComponent },
         { path: '', redirectTo: 'welcome', pathMatch: 'full'},
@@ -25,6 +28,7 @@ import { ProductModule } from './products/product.module';
     ]),
     ProductModule
   ],
+  providers: [EatbnbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

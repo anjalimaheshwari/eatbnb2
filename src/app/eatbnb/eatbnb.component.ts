@@ -1,8 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { IEatbnb } from './eatbnbs';
+import { EatbnbService } from './eatbnb.service';
 
 @Component({
-    templateUrl: './eatbnb.component.html'
+  selector: 'app-eatbnb',
+  templateUrl: './eatbnb.component.html',
+  styleUrls: ['./eatbnb.component.css']
 })
-export class EatbnbComponent {
-    public pageTitle: string = 'EatBnb';
+export class EatbnbComponent implements OnInit{
+  imageWidth: number= 225;
+  imageHeight: number = 200;
+  imageMargin: number = 2;
+  errorMessage: string;
+  products: IEatbnb[] = [];
+  
+  constructor(private _eatbnbService: EatbnbService) { }
+
+  ngOnInit(): void {
+    this.products = this._eatbnbService.getProducts();
+  }
 }
